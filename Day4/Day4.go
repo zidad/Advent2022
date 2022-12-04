@@ -36,16 +36,13 @@ func main() {
 func contains(range1 []int, range2 []int) bool {
 	return range1[0] <= range2[0] && range1[1] >= range2[1]
 }
+
 func overlaps(range1 []int, range2 []int) bool {
 	return between(range1[0], range2[0], range2[1]) || between(range2[0], range1[0], range1[1])
 }
 
 func between(i, min, max int) bool {
-	if (i >= min) && (i <= max) {
-		return true
-	} else {
-		return false
-	}
+	return (i >= min) && (i <= max)
 }
 
 func sliceAtoi(sa []string) ([]int, error) {
